@@ -58,6 +58,7 @@ namespace Padarosa.Banco
             return tabela;
 
         }
+        /*
         public static int Editar()
         {
 
@@ -70,5 +71,6 @@ namespace Padarosa.Banco
         {
 
         }
+        */
     }
 }

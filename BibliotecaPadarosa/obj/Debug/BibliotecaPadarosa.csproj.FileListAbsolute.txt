@@ -1,0 +1,6 @@
+C:\Users\estevao.roliveira\source\repos\Padarosa\BibliotecaPadarosa\bin\Debug\BibliotecaPadarosa.dll
+C:\Users\estevao.roliveira\source\repos\Padarosa\BibliotecaPadarosa\bin\Debug\BibliotecaPadarosa.pdb
+C:\Users\estevao.roliveira\source\repos\Padarosa\BibliotecaPadarosa\obj\Debug\BibliotecaPadarosa.csproj.AssemblyReference.cache
+C:\Users\estevao.roliveira\source\repos\Padarosa\BibliotecaPadarosa\obj\Debug\BibliotecaPadarosa.csproj.CoreCompileInputs.cache
+C:\Users\estevao.roliveira\source\repos\Padarosa\BibliotecaPadarosa\obj\Debug\BibliotecaPadarosa.dll
+C:\Users\estevao.roliveira\source\repos\Padarosa\BibliotecaPadarosa\obj\Debug\BibliotecaPadarosa.pdb
