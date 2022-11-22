@@ -36,7 +36,24 @@ namespace Padarosa
                 // Verificar se houve resultado da consulta:
                 if(resultado.Rows.Count > 0)
                 {
-                    MessageBox.Show("Sucesso!");
+                    // Limpar os campos:
+                    txbEmail.Clear();
+                    txbSenha.Clear();
+
+                    // Atribuir os resultados da consultano obj usuario:
+                    usuario.NomeCompleto = resultado.Rows[0]["nome_completo"].ToString();
+                    usuario.Id = (int)resultado.Rows[0]["id"];
+
+
+                    // Ir para o menu principal:
+                    Views.MenuPrincipal menuPrincipal = new Views.MenuPrincipal(usuario);
+                    // Esconder o form atual:
+                    Hide();
+                    // Mostrar o menu principal:
+                    menuPrincipal.ShowDialog();
+
+                    // Mostrar a tela de login após fechar o menu:
+                    Show();
                 }
                 else
                 {

@@ -28,3 +28,4 @@ C:\Users\estevao.roliveira\source\repos\Padarosa\Padarosa\bin\Debug\System.Numer
 C:\Users\estevao.roliveira\source\repos\Padarosa\Padarosa\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\estevao.roliveira\source\repos\Padarosa\Padarosa\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\estevao.roliveira\source\repos\Padarosa\Padarosa\obj\Debug\Padarosa.csproj.CopyComplete
+C:\Users\estevao.roliveira\source\repos\Padarosa\Padarosa\bin\Debug\EasyEncryption.dll

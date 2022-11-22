@@ -106,6 +106,7 @@
             this.btnUsuarios.TabIndex = 6;
             this.btnUsuarios.Text = "Usuários";
             this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // MenuPrincipal
             // 
