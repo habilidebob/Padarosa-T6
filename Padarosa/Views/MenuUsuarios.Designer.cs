@@ -83,6 +83,7 @@
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.Size = new System.Drawing.Size(832, 267);
             this.dgvUsuarios.TabIndex = 2;
+            this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             // 
             // grbCadastro
             // 
@@ -168,6 +169,7 @@
             this.grbEditar.Controls.Add(this.lblEmailEdi);
             this.grbEditar.Controls.Add(this.txbNomeEdi);
             this.grbEditar.Controls.Add(this.lblNomeEdi);
+            this.grbEditar.Enabled = false;
             this.grbEditar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbEditar.Location = new System.Drawing.Point(432, 345);
             this.grbEditar.Name = "grbEditar";
@@ -237,6 +239,7 @@
             // 
             this.grbRemover.Controls.Add(this.btnRemover);
             this.grbRemover.Controls.Add(this.lblRemover);
+            this.grbRemover.Enabled = false;
             this.grbRemover.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbRemover.Location = new System.Drawing.Point(162, 522);
             this.grbRemover.Name = "grbRemover";
@@ -257,6 +260,7 @@
             this.btnRemover.TabIndex = 1;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = false;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // lblRemover
             // 

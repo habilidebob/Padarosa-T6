@@ -96,6 +96,31 @@ namespace Padarosa.Banco
             }
            
         }
+        public static int Remover(int id)
+        {
+            string comando = "DELETE FROM usuarios WHERE id = @id";
+
+            ConexaoBD conexaoBD = new ConexaoBD();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            cmd.Prepare();
+
+            try
+            {
+                int linhasremovidas = cmd.ExecuteNonQuery();
+                conexaoBD.Desconectar(con);
+                return linhasremovidas;
+            }
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                // Em caso de erro, devolver -1
+                return -1;
+            }
+        }
 
         /*
         public static int Editar()
@@ -103,10 +128,7 @@ namespace Padarosa.Banco
 
         }
         
-        public static int Remover()
-        {
-
-        }
+        
         */
     }
 }

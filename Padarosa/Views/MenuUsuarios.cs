@@ -15,6 +15,7 @@ namespace Padarosa.Views
     {
         // Global:
         Usuario usuario;
+        int idSelecionado = 0;
         public MenuUsuarios(Usuario usuario)
         {
             InitializeComponent();
@@ -65,6 +66,57 @@ namespace Padarosa.Views
             else
             {
                 MessageBox.Show("Verifique as informações digitadas.");
+            }
+        }
+
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ativar os groupboxes:
+            grbRemover.Enabled = true;
+            grbEditar.Enabled = true;
+
+            // Obter o número da linha selecionada:
+            int linhaSelecionada = dgvUsuarios.CurrentCell.RowIndex;
+            // Obter toda a linha selecionada:
+            var dadosLinha = dgvUsuarios.Rows[linhaSelecionada];
+
+            // Popular os campos do editar:
+            txbNomeEdi.Text = dadosLinha.Cells[1].Value.ToString();
+            txbEmailEdi.Text = dadosLinha.Cells[2].Value.ToString();
+
+            // Popular o "remover":
+            lblRemover.Text = dadosLinha.Cells[0].Value.ToString() + " - "
+                + dadosLinha.Cells[1].Value.ToString();
+
+            // Salvar o id na variavel global:
+            idSelecionado = (int)dadosLinha.Cells[0].Value;
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            var r = MessageBox.Show("Tem certeza que deseja remover o seguinte usuário \n" +
+                "" + lblRemover.Text + "?", "Atenção!", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+            if (r == DialogResult.Yes)
+            {
+                // Apagar o jovenzinho:
+                if(Banco.UsuarioDAO.Remover(idSelecionado) != -1)
+                {
+                    MessageBox.Show("Usuário removido!", "Atenção!", 
+                        MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+                    // Atualizar o DGV:
+                    AtualizarDgv();
+                    // Desativar os groupBox:
+                    grbEditar.Enabled = false;
+                    grbRemover.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Houve um erro ao remover o usuário!", "Atenção!",
+                        MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
             }
         }
     }
