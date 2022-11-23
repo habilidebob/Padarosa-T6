@@ -50,6 +50,7 @@
             this.grbRemover = new System.Windows.Forms.GroupBox();
             this.btnRemover = new System.Windows.Forms.Button();
             this.lblRemover = new System.Windows.Forms.Label();
+            this.chbSenha = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.grbCadastro.SuspendLayout();
             this.grbEditar.SuspendLayout();
@@ -60,7 +61,7 @@
             // 
             this.lblInformacao.AutoSize = true;
             this.lblInformacao.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInformacao.Location = new System.Drawing.Point(9, 606);
+            this.lblInformacao.Location = new System.Drawing.Point(9, 646);
             this.lblInformacao.Name = "lblInformacao";
             this.lblInformacao.Size = new System.Drawing.Size(215, 17);
             this.lblInformacao.TabIndex = 0;
@@ -162,6 +163,7 @@
             // 
             // grbEditar
             // 
+            this.grbEditar.Controls.Add(this.chbSenha);
             this.grbEditar.Controls.Add(this.btnEditar);
             this.grbEditar.Controls.Add(this.txbSenhaEdi);
             this.grbEditar.Controls.Add(this.lblSenhaEdi);
@@ -173,14 +175,14 @@
             this.grbEditar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbEditar.Location = new System.Drawing.Point(432, 345);
             this.grbEditar.Name = "grbEditar";
-            this.grbEditar.Size = new System.Drawing.Size(414, 171);
+            this.grbEditar.Size = new System.Drawing.Size(414, 202);
             this.grbEditar.TabIndex = 7;
             this.grbEditar.TabStop = false;
             this.grbEditar.Text = "Editar";
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(150, 125);
+            this.btnEditar.Location = new System.Drawing.Point(149, 153);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(246, 29);
             this.btnEditar.TabIndex = 6;
@@ -190,7 +192,7 @@
             // 
             // txbSenhaEdi
             // 
-            this.txbSenhaEdi.Location = new System.Drawing.Point(151, 93);
+            this.txbSenhaEdi.Location = new System.Drawing.Point(149, 118);
             this.txbSenhaEdi.Name = "txbSenhaEdi";
             this.txbSenhaEdi.Size = new System.Drawing.Size(245, 26);
             this.txbSenhaEdi.TabIndex = 5;
@@ -198,7 +200,7 @@
             // lblSenhaEdi
             // 
             this.lblSenhaEdi.AutoSize = true;
-            this.lblSenhaEdi.Location = new System.Drawing.Point(18, 96);
+            this.lblSenhaEdi.Location = new System.Drawing.Point(17, 121);
             this.lblSenhaEdi.Name = "lblSenhaEdi";
             this.lblSenhaEdi.Size = new System.Drawing.Size(57, 18);
             this.lblSenhaEdi.TabIndex = 4;
@@ -242,7 +244,7 @@
             this.grbRemover.Controls.Add(this.lblRemover);
             this.grbRemover.Enabled = false;
             this.grbRemover.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbRemover.Location = new System.Drawing.Point(162, 522);
+            this.grbRemover.Location = new System.Drawing.Point(162, 553);
             this.grbRemover.Name = "grbRemover";
             this.grbRemover.Size = new System.Drawing.Size(529, 68);
             this.grbRemover.TabIndex = 8;
@@ -274,11 +276,24 @@
             this.lblRemover.TabIndex = 0;
             this.lblRemover.Text = "ID - Nome Usuário";
             // 
+            // chbSenha
+            // 
+            this.chbSenha.AutoSize = true;
+            this.chbSenha.Checked = true;
+            this.chbSenha.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbSenha.Location = new System.Drawing.Point(151, 92);
+            this.chbSenha.Name = "chbSenha";
+            this.chbSenha.Size = new System.Drawing.Size(120, 22);
+            this.chbSenha.TabIndex = 7;
+            this.chbSenha.Text = "Mudar Senha";
+            this.chbSenha.UseVisualStyleBackColor = true;
+            this.chbSenha.CheckedChanged += new System.EventHandler(this.chbSenha_CheckedChanged);
+            // 
             // MenuUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 632);
+            this.ClientSize = new System.Drawing.Size(856, 672);
             this.Controls.Add(this.grbRemover);
             this.Controls.Add(this.grbEditar);
             this.Controls.Add(this.grbCadastro);
@@ -325,5 +340,6 @@
         private System.Windows.Forms.GroupBox grbRemover;
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.Label lblRemover;
+        private System.Windows.Forms.CheckBox chbSenha;
     }
 }

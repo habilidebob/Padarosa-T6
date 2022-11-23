@@ -22,6 +22,11 @@ namespace Padarosa.Views
             lblInformacao.Text = "Você está logado como " + usuario.NomeCompleto;
             // Atribuir o usuário local no global:
             this.usuario = usuario;
+            // Verificar privilégios do usuário:
+            if(usuario.Id != 1)
+            {
+                btnUsuarios.Enabled = false;
+            }
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)

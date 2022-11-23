@@ -122,13 +122,54 @@ namespace Padarosa.Banco
             }
         }
 
-        /*
-        public static int Editar()
+   
+        public static bool Editar(Usuario u)
         {
+            string comando = "UPDATE usuarios SET nome_completo = @nome_completo, " +
+               "email = @email, senha = @senha WHERE id = @id";
+            
+            // Caso o usuário não tenha setado a senha:
+            if (u.Senha == "")
+            {
+                comando = "UPDATE usuarios SET nome_completo = @nome_completo, " +
+                "email = @email WHERE id = @id";
+            }
+            
+            ConexaoBD conexaoBD = new ConexaoBD();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+            cmd.Parameters.AddWithValue("@id", u.Id);
+            cmd.Parameters.AddWithValue("@nome_completo", u.NomeCompleto);
+            cmd.Parameters.AddWithValue("@email", u.Email);
+            if(u.Senha != "")
+            {
+                // Tirar o hash da senha:
+                string senhahash = EasyEncryption.SHA.ComputeSHA256Hash(u.Senha);
+                cmd.Parameters.AddWithValue("@senha", senhahash);
+            }
+            cmd.Prepare();
+
+            try
+            {
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    conexaoBD.Desconectar(con);
+                    return false;
+                }
+                else
+                {
+                    conexaoBD.Desconectar(con);
+                    return true;
+                }
+            }
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
 
         }
         
-        
-        */
     }
 }

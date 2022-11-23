@@ -97,7 +97,7 @@ namespace Padarosa.Views
             var r = MessageBox.Show("Tem certeza que deseja remover o seguinte usuário \n" +
                 "" + lblRemover.Text + "?", "Atenção!", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
-            if (r == DialogResult.Yes)
+            if (r == DialogResult.Yes && idSelecionado != 1)
             {
                 // Apagar o jovenzinho:
                 if(Banco.UsuarioDAO.Remover(idSelecionado) != -1)
@@ -117,13 +117,17 @@ namespace Padarosa.Views
                         MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 }
+            }else if(idSelecionado == 1)
+            {
+                MessageBox.Show("O administrador não pode ser removido!", "Atenção!",
+                        MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (txbEmailCad.Text.Length >= 5 && txbNomeCad.Text.Length > 2
-                && txbSenhaCad.Text.Length >= 3)
+            if (txbEmailEdi.Text.Length >= 5 && txbNomeEdi.Text.Length > 2)
             {
                 Usuario usuario = new Usuario();
                 usuario.Id = idSelecionado;
@@ -131,10 +135,35 @@ namespace Padarosa.Views
                 usuario.Email = txbEmailEdi.Text;
                 usuario.Senha = txbSenhaEdi.Text;
                 // Chamar os bang do DAO:
+                if (Banco.UsuarioDAO.Editar(usuario))
+                {
+                    MessageBox.Show("Usuário modificado com sucesso!");
+                    if(chbSenha.Checked && txbSenhaEdi.Text == "")
+                    {
+                        MessageBox.Show("A senha não foi modificada!");
+                    }
+                    // Atualizar o DGV:
+                    AtualizarDgv();
+                    grbEditar.Enabled = false;
+                    grbRemover.Enabled = false;
+                    // Limpar o campo de senha
+                    txbSenhaEdi.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao modificar usuário.");
+                }
             }
             else
             {
                 MessageBox.Show("Verifique as informações digitadas!");
             }
+        }
+
+        private void chbSenha_CheckedChanged(object sender, EventArgs e)
+        {
+            txbSenhaEdi.Enabled = chbSenha.Checked;
+            txbSenhaEdi.Text = "";
+        }
     }
 }
