@@ -119,5 +119,22 @@ namespace Padarosa.Views
                 }
             }
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (txbEmailCad.Text.Length >= 5 && txbNomeCad.Text.Length > 2
+                && txbSenhaCad.Text.Length >= 3)
+            {
+                Usuario usuario = new Usuario();
+                usuario.Id = idSelecionado;
+                usuario.NomeCompleto = txbNomeEdi.Text;
+                usuario.Email = txbEmailEdi.Text;
+                usuario.Senha = txbSenhaEdi.Text;
+                // Chamar os bang do DAO:
+            }
+            else
+            {
+                MessageBox.Show("Verifique as informações digitadas!");
+            }
     }
 }
