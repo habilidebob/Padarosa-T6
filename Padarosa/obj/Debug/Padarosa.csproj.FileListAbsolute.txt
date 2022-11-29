@@ -29,3 +29,4 @@ C:\Users\estevao.roliveira\source\repos\Padarosa\Padarosa\bin\Debug\System.Runti
 C:\Users\estevao.roliveira\source\repos\Padarosa\Padarosa\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\estevao.roliveira\source\repos\Padarosa\Padarosa\obj\Debug\Padarosa.csproj.CopyComplete
 C:\Users\estevao.roliveira\source\repos\Padarosa\Padarosa\bin\Debug\EasyEncryption.dll
+C:\Users\estevao.roliveira\source\repos\Padarosa\Padarosa\obj\Debug\Padarosa.Views.MenuComandas.resources

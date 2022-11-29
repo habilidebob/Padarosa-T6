@@ -83,6 +83,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\MenuComandas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MenuComandas.Designer.cs">
+      <DependentUpon>MenuComandas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\MenuComandas.resx">
+      <DependentUpon>MenuComandas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>

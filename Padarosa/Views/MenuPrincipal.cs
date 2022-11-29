@@ -35,5 +35,11 @@ namespace Padarosa.Views
             MenuUsuarios menuUsuarios = new MenuUsuarios(usuario);
             menuUsuarios.ShowDialog();
         }
+
+        private void btnComandas_Click(object sender, EventArgs e)
+        {
+            MenuComandas menuComandas = new MenuComandas(usuario);
+            menuComandas.ShowDialog();
+        }
     }
 }

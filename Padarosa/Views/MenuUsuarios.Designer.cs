@@ -40,6 +40,7 @@
             this.txbNomeCad = new System.Windows.Forms.TextBox();
             this.lblNomeCad = new System.Windows.Forms.Label();
             this.grbEditar = new System.Windows.Forms.GroupBox();
+            this.chbSenha = new System.Windows.Forms.CheckBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.txbSenhaEdi = new System.Windows.Forms.TextBox();
             this.lblSenhaEdi = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.grbRemover = new System.Windows.Forms.GroupBox();
             this.btnRemover = new System.Windows.Forms.Button();
             this.lblRemover = new System.Windows.Forms.Label();
-            this.chbSenha = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.grbCadastro.SuspendLayout();
             this.grbEditar.SuspendLayout();
@@ -79,9 +79,18 @@
             // 
             // dgvUsuarios
             // 
+            this.dgvUsuarios.AllowUserToAddRows = false;
+            this.dgvUsuarios.AllowUserToDeleteRows = false;
+            this.dgvUsuarios.AllowUserToOrderColumns = true;
+            this.dgvUsuarios.AllowUserToResizeColumns = false;
+            this.dgvUsuarios.AllowUserToResizeRows = false;
+            this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Location = new System.Drawing.Point(12, 46);
+            this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.ReadOnly = true;
+            this.dgvUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvUsuarios.Size = new System.Drawing.Size(832, 267);
             this.dgvUsuarios.TabIndex = 2;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
@@ -180,6 +189,19 @@
             this.grbEditar.TabStop = false;
             this.grbEditar.Text = "Editar";
             // 
+            // chbSenha
+            // 
+            this.chbSenha.AutoSize = true;
+            this.chbSenha.Checked = true;
+            this.chbSenha.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbSenha.Location = new System.Drawing.Point(151, 92);
+            this.chbSenha.Name = "chbSenha";
+            this.chbSenha.Size = new System.Drawing.Size(120, 22);
+            this.chbSenha.TabIndex = 7;
+            this.chbSenha.Text = "Mudar Senha";
+            this.chbSenha.UseVisualStyleBackColor = true;
+            this.chbSenha.CheckedChanged += new System.EventHandler(this.chbSenha_CheckedChanged);
+            // 
             // btnEditar
             // 
             this.btnEditar.Location = new System.Drawing.Point(149, 153);
@@ -275,19 +297,6 @@
             this.lblRemover.Size = new System.Drawing.Size(147, 19);
             this.lblRemover.TabIndex = 0;
             this.lblRemover.Text = "ID - Nome Usuário";
-            // 
-            // chbSenha
-            // 
-            this.chbSenha.AutoSize = true;
-            this.chbSenha.Checked = true;
-            this.chbSenha.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbSenha.Location = new System.Drawing.Point(151, 92);
-            this.chbSenha.Name = "chbSenha";
-            this.chbSenha.Size = new System.Drawing.Size(120, 22);
-            this.chbSenha.TabIndex = 7;
-            this.chbSenha.Text = "Mudar Senha";
-            this.chbSenha.UseVisualStyleBackColor = true;
-            this.chbSenha.CheckedChanged += new System.EventHandler(this.chbSenha_CheckedChanged);
             // 
             // MenuUsuarios
             // 
