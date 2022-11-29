@@ -30,3 +30,4 @@ C:\Users\estevao.roliveira\source\repos\Padarosa\Padarosa\bin\Debug\System.Threa
 C:\Users\estevao.roliveira\source\repos\Padarosa\Padarosa\obj\Debug\Padarosa.csproj.CopyComplete
 C:\Users\estevao.roliveira\source\repos\Padarosa\Padarosa\bin\Debug\EasyEncryption.dll
 C:\Users\estevao.roliveira\source\repos\Padarosa\Padarosa\obj\Debug\Padarosa.Views.MenuComandas.resources
+C:\Users\estevao.roliveira\source\repos\Padarosa\Padarosa\obj\Debug\Padarosa.Views.MenuCaixa.resources

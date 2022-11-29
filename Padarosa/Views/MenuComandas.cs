@@ -100,11 +100,16 @@ namespace Padarosa.Views
                     if (Banco.OrdemDAO.Lancar(ordem))
                     {
                         MessageBox.Show("O produto foi lançado na comanda!");
+                        Resetar();
                     }
                     else
                     {
                         MessageBox.Show("Houve um erro ao efetuar o lançamento.");
                     }
+                }
+                else
+                {
+                    Resetar();
                 }
             }
         }
