@@ -127,6 +127,7 @@
             this.btnContinuar.TabIndex = 4;
             this.btnContinuar.Text = "Continuar";
             this.btnContinuar.UseVisualStyleBackColor = true;
+            this.btnContinuar.Click += new System.EventHandler(this.btnContinuar_Click);
             // 
             // grbLancamento
             // 
@@ -153,6 +154,7 @@
             this.btnLancar.TabIndex = 4;
             this.btnLancar.Text = "Lançar";
             this.btnLancar.UseVisualStyleBackColor = true;
+            this.btnLancar.Click += new System.EventHandler(this.btnLancar_Click);
             // 
             // txbQuantidade
             // 
@@ -178,8 +180,10 @@
             this.txbProdutoLan.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbProdutoLan.Location = new System.Drawing.Point(164, 24);
             this.txbProdutoLan.Name = "txbProdutoLan";
+            this.txbProdutoLan.ReadOnly = true;
             this.txbProdutoLan.Size = new System.Drawing.Size(596, 50);
             this.txbProdutoLan.TabIndex = 1;
+            this.txbProdutoLan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblProdutoLan
             // 

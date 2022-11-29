@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Banco\ConexaoBD.cs" />
+    <Compile Include="Banco\OrdemDAO.cs" />
     <Compile Include="Banco\ProdutoDAO.cs" />
     <Compile Include="Banco\UsuarioDAO.cs" />
     <Compile Include="Form1.cs">
