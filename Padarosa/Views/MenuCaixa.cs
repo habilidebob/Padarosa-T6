@@ -66,7 +66,7 @@ namespace Padarosa.Views
                 int idComanda = int.Parse(txbComanda.Text); // ?
 
                 var r = MessageBox.Show("Tem certeza que deseja encerrar a comanda "
-                    + idComanda + "?", "Aviso!", MessageBoxButtons.YesNo,
+                    + comandaAtual + "?", "Aviso!", MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
                 if (r == DialogResult.Yes)
                 {
@@ -79,6 +79,9 @@ namespace Padarosa.Views
                         btnEncerrar.Enabled = false;
                         chbPagamento.Checked = false;
                         txbComanda.Clear();
+                        // Resetar a comanda atual:
+                        comandaAtual = 0;
+                        lblTotal.Text = "Total: R$";
                     }
                     else
                     {
