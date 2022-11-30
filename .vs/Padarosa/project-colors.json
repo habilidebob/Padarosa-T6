@@ -5,7 +5,12 @@
       "ProjectGuid": "9fe6551b-eac4-4788-9788-89bc9db4adda",
       "DisplayName": "Padarosa",
       "ColorIndex": 0
+    },
+    "5a59c7b9-eec1-449c-a80d-011c5b30c79f": {
+      "ProjectGuid": "5a59c7b9-eec1-449c-a80d-011c5b30c79f",
+      "DisplayName": "BibliotecaPadarosa",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

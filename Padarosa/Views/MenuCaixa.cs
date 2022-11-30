@@ -12,6 +12,8 @@ namespace Padarosa.Views
 {
     public partial class MenuCaixa : Form
     {
+        int comandaAtual = 0;
+
         public MenuCaixa()
         {
             InitializeComponent();
@@ -27,6 +29,8 @@ namespace Padarosa.Views
             {
                 // Buscar as informações:
                 int nComanda = int.Parse(txbComanda.Text);
+                // Atribuir o número da comanda atual na global:
+                comandaAtual = nComanda;
                 // Armazenar o resultado em um DataTable
                 var r = Banco.OrdemDAO.BuscarComanda(nComanda);
                 // Verificar se existem linhas na resposta:
@@ -45,6 +49,45 @@ namespace Padarosa.Views
                 }
                 
             }
+        }
+
+        private void chbPagamento_CheckedChanged(object sender, EventArgs e)
+        {
+            // Desativar/ativar o btnEncerrar de acordo com o checkbox:
+            btnEncerrar.Enabled = chbPagamento.Checked;
+        }
+
+        private void btnEncerrar_Click(object sender, EventArgs e)
+        {
+            // Verificar se o listar foi pressionado:
+            if(comandaAtual != 0)
+            {
+                // Obter o ID da comanda:
+                int idComanda = int.Parse(txbComanda.Text); // ?
+
+                var r = MessageBox.Show("Tem certeza que deseja encerrar a comanda "
+                    + idComanda + "?", "Aviso!", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+                if (r == DialogResult.Yes)
+                {
+                    if (Banco.OrdemDAO.EncerrarComanda(idComanda))
+                    {
+                        MessageBox.Show("Comanda encerrada com sucesso!");
+                        // Limpar o DGV:
+                        dgvCaixa.DataSource = null;
+                        // Desabilitar os botões:
+                        btnEncerrar.Enabled = false;
+                        chbPagamento.Checked = false;
+                        txbComanda.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao encerrar comanda!");
+                    }
+                }
+            }
+            
+
         }
     }
 }

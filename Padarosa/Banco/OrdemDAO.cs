@@ -73,5 +73,40 @@ namespace Padarosa.Banco
             }
 
         }
+
+        public static bool EncerrarComanda(int id)
+        {
+            string comando = "UPDATE ordens_comandas SET situacao = 0 " +
+                "WHERE id_ficha = @id_ficha";
+
+            ConexaoBD conexaoBD = new ConexaoBD();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+            cmd.Parameters.AddWithValue("@id_ficha", id);
+            
+
+            cmd.Prepare();
+
+            try
+            {
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    conexaoBD.Desconectar(con);
+                    return false;
+                }
+                else
+                {
+                    conexaoBD.Desconectar(con);
+                    return true;
+                }
+            }
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
+
+        }
     }
 }

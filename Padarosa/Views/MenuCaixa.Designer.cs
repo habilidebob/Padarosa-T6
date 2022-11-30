@@ -84,9 +84,11 @@
             this.chbPagamento.TabIndex = 4;
             this.chbPagamento.Text = "Pagamento Recebido";
             this.chbPagamento.UseVisualStyleBackColor = true;
+            this.chbPagamento.CheckedChanged += new System.EventHandler(this.chbPagamento_CheckedChanged);
             // 
             // btnEncerrar
             // 
+            this.btnEncerrar.Enabled = false;
             this.btnEncerrar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEncerrar.Location = new System.Drawing.Point(508, 449);
             this.btnEncerrar.Name = "btnEncerrar";
@@ -94,6 +96,7 @@
             this.btnEncerrar.TabIndex = 5;
             this.btnEncerrar.Text = "Encerrar Comanda";
             this.btnEncerrar.UseVisualStyleBackColor = true;
+            this.btnEncerrar.Click += new System.EventHandler(this.btnEncerrar_Click);
             // 
             // btnListar
             // 
